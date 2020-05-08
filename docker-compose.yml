@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+ #rabbitmqapp:
+ #   build:
+ #     context: ./
+ #     dockerfile: ./Dockerfile
+ #   environment:
+ #     RABBITMQ_URI: "amqp://root:root@rabbitmq:5672"
+ #   ports:
+ #     - '22000:80'
+ #   depends_on:
+ #     - rabbitmq 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    volumes:
+        - rabbit-volume-etc:/etc/rabbitmq/
+        - rabbit-volume-data:/var/lib/rabbitmq/
+        - rabbit-volume-logs:/var/log/rabbitmq/
+    environment:
+        RABBITMQ_ERLANG_COOKIE: "EXAMPLECOOKIE"
+        RABBITMQ_DEFAULT_USER: root
+        RABBITMQ_DEFAULT_PASS: root
+    ports:
+        - "23000:5672"
+        - "23001:15672"
+volumes:
+  rabbit-volume-etc:
+  rabbit-volume-data:
+  rabbit-volume-logs:

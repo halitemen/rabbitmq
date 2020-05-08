@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RabbitMQ": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "RABBITMQ_URI": "amqp://root:root@127.0.0.1:23000"
+      }
+    }
+  }
+}
