@@ -62,7 +62,7 @@ namespace RabbitMQ.Connection
         }
 
         /// <summary>
-        /// Channel oluşturup döner(IModel Threadsafety çalıştiği için böyle düzenlendi)
+        /// Channel oluşturup döner(IModel NonThreadsafety çalıştiği için böyle düzenlendi)
         /// </summary>
         /// <param name="queueName"></param>
         /// <returns></returns>
